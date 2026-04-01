@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Divine Help Electric and Solar Global Limited - Invoice Generator">
+    <title>Invoice Generator - Divine Help Electric</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rosario:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="page-wrapper">
+    <!-- Invoice Preview / Form -->
+    <div class="invoice-container" id="invoiceContainer">
+        
+        <!-- Header -->
+        <header class="invoice-header">
+        <div class="logo-section">
+          <div class="logo">
+            <div class="logo-icon">
+            <img src="images/Fontuna (3).png">
+            </div>
+          </div>
+          <div class="company-name">
+            <strong>DIVINE HELP ELECTRIC</strong>
+            <span>AND SOLAR GLOBAL LIMITED</span>
+          </div>
+        </div>
+        <div class="invoice-title">
+          <h1>INVOICE</h1>
+        </div>
+      </header>
+
+      <!-- Client Info -->
+      <section class="client-info">
+        <div class="client-details">
+          <div class="field-group name-group">
+            <input type="text" id="clientName" class="inline-input name-input" placeholder="Name" />
+            <input type="text" id="clientSurname" class="inline-input name-input" placeholder="Surname" />
+          </div>
+          <div class="field-group">
+            <input type="date" id="invoiceDate" class="inline-input" />
+          </div>
+          <div class="field-group">
+            <input type="text" id="clientLocation" class="inline-input" placeholder="123 Anywhere St., Any City" />
+          </div>
+          <div class="field-group">
+            <input type="email" id="clientEmail" class="inline-input" placeholder="hello@reallygreatsite.com" />
+          </div>
+          <div class="field-group">
+            <input type="tel" id="clientPhone" class="inline-input" placeholder="+123-456-7890" />
+          </div>
+        </div>
+        <div class="invoice-number-section">
+          <span class="invoice-label">INVOICE</span>
+          <span class="invoice-number" id="invoiceNumber">0000000</span>
+          <button class="regenerate-btn" id="regenerateBtn" title="Generate new invoice number">⟳</button>
+        </div>
+      </section>
+
+      <!-- Product Table -->
+      <section class="product-section">
+        <div class="table-header">
+          <span class="col-product">PRODUCT</span>
+          <span class="col-price">PRICE</span>
+          <span class="col-qty">QTY</span>
+          <span class="col-total">TOTAL</span>
+        </div>
+        <div class="table-body" id="tableBody">
+          <!-- Rows will be added dynamically -->
+        </div>
+        <div class="add-row-wrapper">
+          <button class="add-row-btn" id="addRowBtn">+ Add Item</button>
+        </div>
+      </section>
+
+      <!-- Payment & Totals -->
+      <section class="payment-section">
+        <div class="payment-data">
+          <h4>PAYMENT DATA:</h4>
+          <div class="payment-field">
+            <label>ACCOUT_NO:</label>
+            <input type="text" id="accountNo" class="inline-input payment-input" placeholder="2000440224" />
+          </div>
+          <div class="payment-field">
+            <label>BANK NAME:</label>
+            <input type="text" id="bankName" class="inline-input payment-input" placeholder="FIDELITY BANK PLC" />
+          </div>
+          <div class="payment-field">
+            <label>NAME:</label>
+            <input type="text" id="accountName" class="inline-input payment-input" placeholder="NDUKWU HUMPHREY UCHE" />
+          </div>
+          <div class="payment-field">
+            <label>PAYMENT METHOD:</label>
+            <input type="text" id="paymentMethod" class="inline-input payment-input" placeholder="DEBIT CARD" />
+          </div>
+        </div>
+        <div class="totals">
+          <div class="total-row">
+            <span class="total-label">SUBTOTAL</span>
+            <span class="total-value" id="subtotalValue">₦0</span>
+          </div>
+          <div class="total-row">
+            <span class="total-label">TAX</span>
+            <div class="tax-input-wrapper">
+              <span class="currency-sign">₦</span>
+              <input type="number" id="taxInput" class="inline-input tax-input" placeholder="0" value="0" min="0" />
+            </div>
+          </div>
+          <div class="total-row total-final">
+            <span class="total-label">TOTAL</span>
+            <span class="total-value" id="totalValue">₦0</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Terms and Conditions -->
+      <section class="terms-section">
+        <h4>TERMS AND CONDITIONS</h4>
+        <textarea id="termsText" class="terms-textarea" placeholder="DEAR ESTEEMED CUSTOMERS, FOR YOUR OWN GOOD AND THAT OF THE MANAGEMENT MAKE SURE YOU PAY YOUR MONEY INTO THE COMPANY ACCOUNT ABOVE. TO AVOID LITIGATION"></textarea>
+      </section>
+
+      <!-- Footer -->
+      <footer class="invoice-footer">
+        <div class="footer-content">
+          <div class="footer-item">
+            <div class="footer-icon phone-icon">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            </div>
+            <div class="footer-text">
+              <input type="tel" id="footerPhone1" class="inline-input footer-input" placeholder="+2348035969100" />
+              <input type="tel" id="footerPhone2" class="inline-input footer-input" placeholder="+2348032534216" />
+            </div>
+          </div>
+          <div class="footer-item">
+            <div class="footer-icon email-icon">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            </div>
+            <div class="footer-text">
+              <input type="email" id="footerEmail" class="inline-input footer-input" placeholder="hello@reallygreatsite.com" />
+              <input type="url" id="footerWebsite" class="inline-input footer-input" placeholder="www.reallygreatsite.com" />
+            </div>
+          </div>
+          <div class="footer-item">
+            <div class="footer-icon location-icon">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </div>
+            <div class="footer-text">
+              <input type="text" id="footerLocation" class="inline-input footer-input" placeholder="F-line 809 Alaba int'l Market, Ojo Lagos" />
+            </div>
+          </div>
+        </div>
+      </footer>
+
+      <!-- Decorative Bottom Bar -->
+      <div class="bottom-decoration">
+        <img src="images/Fontuna (2).png">
+      </div>
+    </div>
+
+    <!-- Action Buttons -->
+    <div class="action-bar">
+      <button class="action-btn print-btn" id="printBtn">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+        Print Invoice
+      </button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
