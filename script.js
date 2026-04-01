@@ -65,6 +65,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     removeBtn.addEventListener('click', () => {
         row.remove();
+        updateSerialNumbers();
         updateTotals();
       // Ensure at least one row exists
         if (tableBody.children.length === 0) {
@@ -73,6 +74,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     tableBody.appendChild(row);
+    updateSerialNumbers();
     return row;
 }
 

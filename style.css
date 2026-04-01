@@ -228,7 +228,7 @@ body {
 
 .table-header {
   display: grid;
-  grid-template-columns: 1fr 120px 80px 100px;
+  grid-template-columns: 40px 1fr 120px 80px 100px;
   background: linear-gradient(90deg, #00357a, #5b7ead);
   color: var(--white);
   padding: 10px 16px;
@@ -246,7 +246,7 @@ body {
 
 .table-row {
   display: grid;
-  grid-template-columns: 1fr 120px 80px 100px;
+  grid-template-columns: 40px 1fr 120px 80px 100px;
   padding: 0 16px;
   border-bottom: 1px solid var(--gray-100);
   align-items: center;
@@ -697,7 +697,7 @@ input[type="number"] {
 
   .table-header,
   .table-row {
-    grid-template-columns: 1fr 80px 60px 70px;
+    grid-template-columns: 30px 1fr 80px 60px 70px;
     padding: 0 10px;
     font-size: 10px;
   }
