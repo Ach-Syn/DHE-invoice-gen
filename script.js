@@ -38,6 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
     row.className = 'table-row';
 
     row.innerHTML = `
+        <span class="row-sn"></span>
         <input type="text" class="item-input" placeholder="Item name / Description" />
         <input type="number" class="price-input" placeholder="₦0" min="0" step="0.01" />
         <input type="number" class="qty-input" placeholder="0" min="0" step="1" value="1" />
@@ -74,6 +75,14 @@ document.addEventListener('DOMContentLoaded', () => {
     tableBody.appendChild(row);
     return row;
 }
+
+  // Update serial numbers for all rows
+    function updateSerialNumbers() {
+    const rows = tableBody.querySelectorAll('.table-row');
+    rows.forEach((row, index) => {
+        row.querySelector('.row-sn').textContent = index + 1;
+    });
+    }
 
   // Add a new row
     function addRow() {
