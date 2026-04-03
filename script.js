@@ -56,7 +56,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const price = parseFloat(priceInput.value) || 0;
         const qty = parseInt(qtyInput.value) || 0;
       const total = price * qty;
-        rowTotal.textContent = `$${formatNumber(total)}`;
+        rowTotal.textContent = `₦${formatNumber(total)}`;
         updateTotals();
     }
 
@@ -106,8 +106,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const tax = parseFloat(taxInput.value) || 0;
     const total = subtotal + tax;
 
-    subtotalValue.textContent = `$${formatNumber(subtotal)}`;
-    totalValue.textContent = `$${formatNumber(total)}`;
+    subtotalValue.textContent = `₦${formatNumber(subtotal)}`;
+    totalValue.textContent = `₦${formatNumber(total)}`;
 }
 
   // Format number with commas
